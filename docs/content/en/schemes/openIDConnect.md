@@ -84,6 +84,10 @@ Each endpoint defined in the OAuth2 scheme can also be used in the OpenID Connec
 
 **REQUIRED** - OpenID Connect client id.
 
+### `clientSecret`
+
+OpenID Connect client secret key.
+
 ### `scope`
 
 - Default: `['openid', 'profile', 'offline_access']`

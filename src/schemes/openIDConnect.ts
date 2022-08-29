@@ -20,6 +20,7 @@ export interface OpenIDConnectSchemeEndpoints extends Oauth2SchemeEndpoints {
 export interface OpenIDConnectSchemeOptions
   extends Oauth2SchemeOptions,
     IdTokenableSchemeOptions {
+  clientSecret: string
   endpoints: OpenIDConnectSchemeEndpoints
 }
 
@@ -272,6 +273,7 @@ export class OpenIDConnectScheme<
         data: encodeQuery({
           code: parsedQuery.code as string,
           client_id: this.options.clientId,
+          client_secret: this.options.clientSecret,
           redirect_uri: this.redirectURI,
           response_type: this.options.responseType,
           audience: this.options.audience,
